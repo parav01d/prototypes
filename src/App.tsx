@@ -79,16 +79,26 @@ function App() {
           ))}
         </AccordionGroup>
         <Divider></Divider>
+        <Content>
+          <Title>Accordion in Card</Title>
+        </Content>
         <Content.ColumnLayout>
           <Content.ColumnLayout.Wrapper>
             <Card>
               <Card.HorizontalLayout>
                 <Card.HorizontalLayout.ContentWrapper>
-                  <Title>Card</Title>
-                  <Paragraph>
-                    Ich besitze keine eigene Breite, sondern orientiere mich am
-                    Layout.
-                  </Paragraph>
+                  <AccordionGroup isRadio>
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Accordion id={`${i}`} key={i}>
+                        <Accordion.AccordionTrigger>
+                          <Paragraph>Accordion Radio {i}</Paragraph>
+                        </Accordion.AccordionTrigger>
+                        <Accordion.AccordionContent>
+                          <Paragraph>Content</Paragraph>
+                        </Accordion.AccordionContent>
+                      </Accordion>
+                    ))}
+                  </AccordionGroup>
                 </Card.HorizontalLayout.ContentWrapper>
                 <Card.HorizontalLayout.ImageWrapper>
                   <Image url={imageUrl} />
@@ -103,11 +113,18 @@ function App() {
                   <Image url={imageUrl} />
                 </Card.HorizontalLayout.ImageWrapper>
                 <Card.HorizontalLayout.ContentWrapper>
-                  <Title>Card</Title>
-                  <Paragraph>
-                    Ich besitze keine eigene Breite, sondern orientiere mich am
-                    Layout.
-                  </Paragraph>
+                  <AccordionGroup>
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Accordion id={`${i}`} key={i}>
+                        <Accordion.AccordionTrigger>
+                          <Paragraph>Accordion Group {i}</Paragraph>
+                        </Accordion.AccordionTrigger>
+                        <Accordion.AccordionContent>
+                          <Paragraph>Content</Paragraph>
+                        </Accordion.AccordionContent>
+                      </Accordion>
+                    ))}
+                  </AccordionGroup>
                 </Card.HorizontalLayout.ContentWrapper>
               </Card.HorizontalLayout>
             </Card>
