@@ -1,0 +1,20 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "BENEFICIALS",
+    "classs",
+    "ECOTOXIAL",
+    "Paintable",
+    "Pairable",
+    "papaparse",
+    "PHEROMON",
+    "speci",
+    "Supercluster",
+    "unparse"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "i18n-ally.localesPaths": ["src/Translation/Resource"]
+}
