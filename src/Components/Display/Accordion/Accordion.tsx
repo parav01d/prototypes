@@ -86,7 +86,7 @@ const AccordionTrigger: FunctionComponent<AccordionTriggerProps> = ({
       onClick={handleOnClick}
       className="w-full border border-gray-300 p-3 bg-primary flex flex-row justify-between cursor-pointer"
     >
-      {children}
+      <div className="flex flex-row gap-3 justify-start">{children}</div>
       {isOpen ? <div>-</div> : <div>+</div>}
     </div>
   );
@@ -102,7 +102,7 @@ const AccordionContent: FunctionComponent<AccordionContentProps> = ({
 }: AccordionContentProps) => {
   return (
     <div
-      className={`w-full border border-t-0 border-gray-300 bg-primary flex flex-col transition-all ${
+      className={`w-full border border-t-0 border-gray-300 bg-primary flex flex-col gap-3 transition-all ${
         !isOpen ? "max-h-0 p-0 overflow-hidden" : "p-3"
       }`}
     >
