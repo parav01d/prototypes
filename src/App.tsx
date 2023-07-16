@@ -20,10 +20,21 @@ function App() {
     <Page>
       <Navigation></Navigation>
       <Content>
+        <Divider></Divider>
         <Accordion isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <Accordion.AccordionTrigger>Accordion</Accordion.AccordionTrigger>
           <Accordion.AccordionContent> Content </Accordion.AccordionContent>
         </Accordion>
+        <Divider></Divider>
+        <AccordionGroup isRadio>
+          {[1, 2, 3, 4, 5].map((i) => (
+            <Accordion id={`${i}`} key={i}>
+              <Accordion.AccordionTrigger>Accordion</Accordion.AccordionTrigger>
+              <Accordion.AccordionContent> Content </Accordion.AccordionContent>
+            </Accordion>
+          ))}
+        </AccordionGroup>
+        <Divider></Divider>
         <AccordionGroup>
           {[1, 2, 3, 4, 5].map((i) => (
             <Accordion id={`${i}`} key={i}>
@@ -32,7 +43,6 @@ function App() {
             </Accordion>
           ))}
         </AccordionGroup>
-
         <Divider></Divider>
         <Content.ColumnLayout>
           <Content.ColumnLayout.Wrapper>

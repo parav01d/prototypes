@@ -15,14 +15,16 @@ export const AccordionGroup: FunctionComponent<AccordionGroupProps> &
 }: AccordionGroupProps) => {
   const [openAccordions, setOpenAccordions] = React.useState<string[]>([]);
   const handleOnClick = (id: string) => {
-    if (isRadio) {
-      setOpenAccordions([id]);
-    } else if (openAccordions.includes(id)) {
+    if (openAccordions.includes(id)) {
       setOpenAccordions(
         openAccordions.filter((accordionId) => accordionId !== id)
       );
     } else {
-      setOpenAccordions([...openAccordions, id]);
+      if (isRadio) {
+        setOpenAccordions([id]);
+      } else {
+        setOpenAccordions([...openAccordions, id]);
+      }
     }
   };
   return (
@@ -100,8 +102,8 @@ const AccordionContent: FunctionComponent<AccordionContentProps> = ({
 }: AccordionContentProps) => {
   return (
     <div
-      className={`w-full border border-t-0 border-gray-300 bg-primary p-3 flex flex-col transition-all ${
-        isOpen || "max-h-0 p-0 overflow-hidden"
+      className={`w-full border border-t-0 border-gray-300 bg-primary flex flex-col transition-all ${
+        !isOpen ? "max-h-0 p-0 overflow-hidden" : "p-3"
       }`}
     >
       {children}
